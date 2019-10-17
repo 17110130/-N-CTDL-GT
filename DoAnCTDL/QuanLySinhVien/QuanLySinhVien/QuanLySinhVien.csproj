@@ -78,6 +78,7 @@
     <Compile Include="QuanLySinhVienControl.Designer.cs">
       <DependentUpon>QuanLySinhVienControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="SinhVien.cs" />
     <Compile Include="TimKiemSinhVienControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
