@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySinhVien
 {
-    class SinhVien
+    public class SinhVien
     {
         private int id;
         private string name;
