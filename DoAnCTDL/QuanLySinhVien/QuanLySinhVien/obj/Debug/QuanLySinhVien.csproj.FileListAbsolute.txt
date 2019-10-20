@@ -28,3 +28,17 @@ C:\Users\Admin\Desktop\DACTDL\DO-AN-CTDL-GT\DoAnCTDL\QuanLySinhVien\QuanLySinhVi
 C:\Users\Admin\Desktop\DACTDL\DO-AN-CTDL-GT\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\DACTDL\DO-AN-CTDL-GT\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.exe
 C:\Users\Admin\Desktop\DACTDL\DO-AN-CTDL-GT\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.pdb
+C:\Users\nguye\OneDrive\Desktop\QLSV\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csprojAssemblyReference.cache
+C:\Users\nguye\OneDrive\Desktop\QLSV\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.Form1.resources
+C:\Users\nguye\OneDrive\Desktop\QLSV\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.ManHinhChinhControl.resources
+C:\Users\nguye\OneDrive\Desktop\QLSV\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.Properties.Resources.resources
+C:\Users\nguye\OneDrive\Desktop\QLSV\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.QuanLyLopHocControl.resources
+C:\Users\nguye\OneDrive\Desktop\QLSV\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.QuanLyNganhControl.resources
+C:\Users\nguye\OneDrive\Desktop\QLSV\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.QuanLySinhVienControl.resources
+C:\Users\nguye\OneDrive\Desktop\QLSV\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.TimKiemSinhVienControl.resources
+C:\Users\nguye\OneDrive\Desktop\QLSV\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.GenerateResource.cache
+C:\Users\nguye\OneDrive\Desktop\QLSV\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.exe
+C:\Users\nguye\OneDrive\Desktop\QLSV\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.pdb
+C:\Users\nguye\OneDrive\Desktop\QLSV\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.exe.config
+C:\Users\nguye\OneDrive\Desktop\QLSV\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.exe
+C:\Users\nguye\OneDrive\Desktop\QLSV\DoAnCTDL\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.pdb

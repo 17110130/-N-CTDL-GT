@@ -8,14 +8,15 @@ namespace QuanLySinhVien
 {
     public class LopHoc
     {
-        private string maLopHoc;
-        private string tenLopHoc;
-        private LinkedList<SinhVien> dsSV;
 
         public LopHoc()
         {
-            this.dsSV = new LinkedList<SinhVien>();
-        }
+            dsSV = new LinkedList<SinhVien>();
+        } 
+        
+        private string maLopHoc;
+        private string tenLopHoc;
+        private LinkedList<SinhVien> dsSV;
 
         public string MaLopHoc { get; set; }
         public string TenLopHoc { get; set; }

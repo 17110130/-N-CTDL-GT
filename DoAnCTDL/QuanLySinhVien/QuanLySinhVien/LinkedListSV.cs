@@ -53,5 +53,39 @@ namespace QuanLySinhVien
             count++;
         }
 
+        public void RemoveNode( Node pSearch)
+        {
+            Node pDelete = pHead;
+            Node pPre = null;
+
+            while (pDelete != null)
+            {
+                if (pDelete == pSearch)
+                    break;
+                pPre = pDelete;
+                pDelete = pDelete.pNext;
+            }
+            if (pDelete == pHead)
+            {
+                pHead = pHead.pNext;
+                pDelete.pNext = null;
+                pDelete = null;
+            }
+            else if (pDelete.pNext == null)
+            {
+                pTail = pPre;
+                pPre.pNext = null;
+                pDelete = null;
+            }
+            else
+            {
+                pPre.pNext = pDelete.pNext;
+                pDelete.pNext = null;
+                pDelete = null;
+            }
+
+            count--;
+        }
+
     }
 }

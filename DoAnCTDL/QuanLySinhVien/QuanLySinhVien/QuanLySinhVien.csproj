@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LinkedListSV.cs" />
     <Compile Include="LopHoc.cs" />
     <Compile Include="ManHinhChinhControl.cs">
       <SubType>UserControl</SubType>
@@ -105,6 +106,7 @@
     </Compile>
     <EmbeddedResource Include="QuanLyLopHocControl.resx">
       <DependentUpon>QuanLyLopHocControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNganhControl.resx">
       <DependentUpon>QuanLyNganhControl.cs</DependentUpon>
