@@ -54,44 +54,44 @@
     </Compile>
     <Compile Include="LinkedListSV.cs" />
     <Compile Include="LopHoc.cs" />
-    <Compile Include="ManHinhChinhControl.cs">
+    <Compile Include="Controls\ManHinhChinhControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ManHinhChinhControl.Designer.cs">
+    <Compile Include="Controls\ManHinhChinhControl.Designer.cs">
       <DependentUpon>ManHinhChinhControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Nganh.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyLopHocControl.cs">
+    <Compile Include="Controls\QuanLyLopHocControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QuanLyLopHocControl.Designer.cs">
+    <Compile Include="Controls\QuanLyLopHocControl.Designer.cs">
       <DependentUpon>QuanLyLopHocControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyNganhControl.cs">
+    <Compile Include="Controls\QuanLyNganhControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QuanLyNganhControl.Designer.cs">
+    <Compile Include="Controls\QuanLyNganhControl.Designer.cs">
       <DependentUpon>QuanLyNganhControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLySinhVienControl.cs">
+    <Compile Include="Controls\QuanLySinhVienControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QuanLySinhVienControl.Designer.cs">
+    <Compile Include="Controls\QuanLySinhVienControl.Designer.cs">
       <DependentUpon>QuanLySinhVienControl.cs</DependentUpon>
     </Compile>
     <Compile Include="SinhVien.cs" />
-    <Compile Include="TimKiemSinhVienControl.cs">
+    <Compile Include="Controls\TimKiemSinhVienControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TimKiemSinhVienControl.Designer.cs">
+    <Compile Include="Controls\TimKiemSinhVienControl.Designer.cs">
       <DependentUpon>TimKiemSinhVienControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManHinhChinhControl.resx">
+    <EmbeddedResource Include="Controls\ManHinhChinhControl.resx">
       <DependentUpon>ManHinhChinhControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -104,17 +104,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QuanLyLopHocControl.resx">
+    <EmbeddedResource Include="Controls\QuanLyLopHocControl.resx">
       <DependentUpon>QuanLyLopHocControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyNganhControl.resx">
+    <EmbeddedResource Include="Controls\QuanLyNganhControl.resx">
       <DependentUpon>QuanLyNganhControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySinhVienControl.resx">
+    <EmbeddedResource Include="Controls\QuanLySinhVienControl.resx">
       <DependentUpon>QuanLySinhVienControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TimKiemSinhVienControl.resx">
+    <EmbeddedResource Include="Controls\TimKiemSinhVienControl.resx">
       <DependentUpon>TimKiemSinhVienControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

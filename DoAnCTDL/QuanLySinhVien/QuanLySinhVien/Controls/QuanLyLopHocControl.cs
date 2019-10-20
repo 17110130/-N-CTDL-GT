@@ -18,12 +18,7 @@ namespace QuanLySinhVien
 
         public QuanLyLopHocControl()
         {
-            CSDL_Lop.AddHead(new LopHoc()
-            {
-                MaLopHoc = "AA",
-                TenLopHoc = "Hoa",
-                DsSV = new LinkedList<SinhVien>() { },
-            });
+            
             InitializeComponent();
         }
 
