@@ -11,16 +11,28 @@ namespace QuanLySinhVien
 
         public LopHoc()
         {
-            dsSV = new LinkedList<SinhVien>();
-        } 
-        
-        private string maLopHoc;
-        private string tenLopHoc;
-        private LinkedList<SinhVien> dsSV;
+            dsSV = new LinkedListSV<SinhVien>();
+        }
 
-        public string MaLopHoc { get; set; }
-        public string TenLopHoc { get; set; }
+        private string maLopHoc = "";
+        private string tenLopHoc = "";
+        public LinkedListSV<SinhVien> dsSV;
 
-        internal LinkedList<SinhVien> DsSV { get; set; }
+        public string MaLopHoc
+        {
+            get {return maLopHoc; }
+            set { maLopHoc = value; }
+        }
+        public string TenLopHoc {
+            get { return tenLopHoc; }
+            set { tenLopHoc = value; }
+        }
+
+        //public LinkedListSV<SinhVien> DsSV {
+        //    get { return dsSV; }
+        //    set
+        //}
+
+
     }
 }

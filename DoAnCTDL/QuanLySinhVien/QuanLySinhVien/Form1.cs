@@ -18,10 +18,11 @@ namespace QuanLySinhVien
             InitializeComponent();
             manHinhChinhControl1.BringToFront();
             lbTitle.Text = "Màn hình chính";
+            taoDuLieu();
         }
-        LinkedList<SinhVien> CSDL_SV = new LinkedList<SinhVien>();
-        LinkedList<LopHoc> CSDL_LH = new LinkedList<LopHoc>();
-        LinkedList<Nganh> CSDL_N = new LinkedList<Nganh>();
+        public static LinkedListSV<SinhVien> CSDL_SV = new LinkedListSV<SinhVien>();
+        public static LinkedListSV<LopHoc> CSDL_LH = new LinkedListSV<LopHoc>();
+        public static LinkedListSV<Nganh> CSDL_N = new LinkedListSV<Nganh>();
 
         private void taoDuLieu()
         {
@@ -38,12 +39,12 @@ namespace QuanLySinhVien
             sv1.Name = "Nguyễn Văn A";
             sv1.Sex = true;
 
-            cntt.DsLH.AddFirst(cl1);
-            cl1.DsSV.AddFirst(sv1);
+            cntt.DsLH.AddHead(cl1);
+            cl1.dsSV.AddHead(sv1);
 
-            CSDL_SV.AddFirst(sv1);
-            CSDL_LH.AddFirst(cl1);
-            CSDL_N.AddFirst(cntt);
+            CSDL_SV.AddHead(sv1);
+            CSDL_LH.AddHead(cl1);
+            CSDL_N.AddHead(cntt);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -65,6 +66,7 @@ namespace QuanLySinhVien
         {
             quanLyLopHocControl1.BringToFront();
             lbTitle.Text = "Quản lý lớp học";
+            quanLyLopHocControl1.Get_Data(CSDL_LH, CSDL_N);
         }
 
         private void btnQLN_Click(object sender, EventArgs e)

@@ -10,15 +10,18 @@ namespace QuanLySinhVien
     {
         private string maNghanh;
         private string tenNganh;
-        private LinkedList<LopHoc> dsLH;
+        private  LinkedListSV<LopHoc> dsLH;
 
         public Nganh()
         {
-            this.dsLH = new LinkedList<LopHoc>();
+            this.dsLH = new LinkedListSV<LopHoc>();
         }
 
         public string MaNganh { get; set; }
         public string TenNganh { get; set; }
-        internal LinkedList<LopHoc> DsLH { get; set; }
+         public LinkedListSV<LopHoc> DsLH {
+            get { return dsLH;  }
+            set { dsLH = value; }
+        }
     }
 }

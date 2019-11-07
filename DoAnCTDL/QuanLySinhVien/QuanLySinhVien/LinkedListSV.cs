@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySinhVien
 {
-    class LinkedListSV<L>
+    public class LinkedListSV<L>
     {
         public LinkedListSV()
         {
@@ -37,6 +37,7 @@ namespace QuanLySinhVien
         public void AddHead(L info)
         {
             Node NewNode = CreNode(info);
+
             if (NewNode == null)
             {
                 return;
