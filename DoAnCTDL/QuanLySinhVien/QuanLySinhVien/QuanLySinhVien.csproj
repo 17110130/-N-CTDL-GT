@@ -81,6 +81,7 @@
     <Compile Include="Controls\QuanLySinhVienControl.Designer.cs">
       <DependentUpon>QuanLySinhVienControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validation.cs" />
     <Compile Include="SinhVien.cs" />
     <Compile Include="Controls\TimKiemSinhVienControl.cs">
       <SubType>UserControl</SubType>

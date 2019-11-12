@@ -38,10 +38,9 @@ namespace QuanLySinhVien
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnXoaThongTinLop = new System.Windows.Forms.Button();
-            this.btnLuuLop = new System.Windows.Forms.Button();
+            this.btnThemLop = new System.Windows.Forms.Button();
             this.txtTenLop = new System.Windows.Forms.TextBox();
             this.txtMaLop = new System.Windows.Forms.TextBox();
-            this.txtNganh = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +50,10 @@ namespace QuanLySinhVien
             this.btnXoaLop = new System.Windows.Forms.Button();
             this.btnSuaLop = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.cbNganh = new System.Windows.Forms.ComboBox();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.grbDanhSachNganh.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -102,11 +105,11 @@ namespace QuanLySinhVien
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.cbNganh);
             this.panel4.Controls.Add(this.btnXoaThongTinLop);
-            this.panel4.Controls.Add(this.btnLuuLop);
+            this.panel4.Controls.Add(this.btnThemLop);
             this.panel4.Controls.Add(this.txtTenLop);
             this.panel4.Controls.Add(this.txtMaLop);
-            this.panel4.Controls.Add(this.txtNganh);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.label1);
@@ -128,16 +131,16 @@ namespace QuanLySinhVien
             this.btnXoaThongTinLop.Text = "Xóa Thông TIn";
             this.btnXoaThongTinLop.UseVisualStyleBackColor = true;
             // 
-            // btnLuuLop
+            // btnThemLop
             // 
-            this.btnLuuLop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLuuLop.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuLop.Location = new System.Drawing.Point(194, 158);
-            this.btnLuuLop.Name = "btnLuuLop";
-            this.btnLuuLop.Size = new System.Drawing.Size(136, 55);
-            this.btnLuuLop.TabIndex = 3;
-            this.btnLuuLop.Text = "Lưu";
-            this.btnLuuLop.UseVisualStyleBackColor = true;
+            this.btnThemLop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnThemLop.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemLop.Location = new System.Drawing.Point(194, 158);
+            this.btnThemLop.Name = "btnThemLop";
+            this.btnThemLop.Size = new System.Drawing.Size(136, 55);
+            this.btnThemLop.TabIndex = 3;
+            this.btnThemLop.Text = "Thêm";
+            this.btnThemLop.UseVisualStyleBackColor = true;
             // 
             // txtTenLop
             // 
@@ -152,13 +155,6 @@ namespace QuanLySinhVien
             this.txtMaLop.Name = "txtMaLop";
             this.txtMaLop.Size = new System.Drawing.Size(527, 23);
             this.txtMaLop.TabIndex = 1;
-            // 
-            // txtNganh
-            // 
-            this.txtNganh.Location = new System.Drawing.Point(110, 23);
-            this.txtNganh.Name = "txtNganh";
-            this.txtNganh.Size = new System.Drawing.Size(527, 23);
-            this.txtNganh.TabIndex = 1;
             // 
             // label3
             // 
@@ -215,12 +211,18 @@ namespace QuanLySinhVien
             // 
             // lvDanhSachLop
             // 
+            this.lvDanhSachLop.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.lvDanhSachLop.FullRowSelect = true;
             this.lvDanhSachLop.HideSelection = false;
             this.lvDanhSachLop.Location = new System.Drawing.Point(6, 19);
             this.lvDanhSachLop.Name = "lvDanhSachLop";
             this.lvDanhSachLop.Size = new System.Drawing.Size(631, 165);
             this.lvDanhSachLop.TabIndex = 3;
             this.lvDanhSachLop.UseCompatibleStateImageBehavior = false;
+            this.lvDanhSachLop.View = System.Windows.Forms.View.Details;
             // 
             // btnXoaLop
             // 
@@ -245,6 +247,30 @@ namespace QuanLySinhVien
             this.btnSuaLop.Text = "Sửa";
             this.btnSuaLop.UseVisualStyleBackColor = true;
             this.btnSuaLop.Click += new System.EventHandler(this.btnSuaLop_Click);
+            // 
+            // cbNganh
+            // 
+            this.cbNganh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNganh.FormattingEnabled = true;
+            this.cbNganh.Location = new System.Drawing.Point(110, 23);
+            this.cbNganh.Name = "cbNganh";
+            this.cbNganh.Size = new System.Drawing.Size(527, 27);
+            this.cbNganh.TabIndex = 5;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Mã Lớp";
+            this.columnHeader1.Width = 140;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tên Lớp";
+            this.columnHeader2.Width = 329;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Số lượng sinh viên";
+            this.columnHeader3.Width = 158;
             // 
             // QuanLyLopHocControl
             // 
@@ -276,17 +302,20 @@ namespace QuanLySinhVien
         private Panel panel4;
         private TextBox txtTenLop;
         private TextBox txtMaLop;
-        private TextBox txtNganh;
         private Label label3;
         private Label label2;
         private Label label1;
         private DataGridViewCheckBoxColumn dgvCheckBox;
         private Button btnXoaThongTinLop;
-        private Button btnLuuLop;
+        private Button btnThemLop;
         private Button btnXoaLop;
         private Button btnSuaLop;
         private BackgroundWorker backgroundWorker1;
         private ListView lvDanhSachLop;
         private TreeView tvNganh;
+        private ComboBox cbNganh;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
     }
 }
