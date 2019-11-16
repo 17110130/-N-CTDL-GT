@@ -55,6 +55,30 @@ namespace QuanLySinhVien
                 NodeSV = NodeSV.pNext;
             }
         }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            string content = "";
+            Validation validation = new Validation();
+            content += validation.IsDigit("MSSV", txtMSSV);
+            if ( content == "" )
+            {
+                LinkedListSV<SinhVien>.Node NodeSV = CSDL_SV.pHead;
+                while ( NodeSV != null )
+                {
+                    if ( NodeSV.data.Id == int.Parse(txtMSSV.Text) )
+                    {
+                        content += "Mã số sinh viên đã tồn tại!\n";
+                    }
+                    NodeSV = NodeSV.pNext;
+                }
+            }
+            content += validation.IsString("Tên sinh viên", txtTenSinhVien);
+            content += validation.Check_radio(radNam, radNu);
+            content += validation.Check_Date(txtNgay, txtThang, txtNam);
+
+        }
+
         private void DeleteSV(int IdDel)
         {
             // delete student 
@@ -86,5 +110,7 @@ namespace QuanLySinhVien
         {
 
         }
+
+       
     }
 }
