@@ -32,9 +32,9 @@
             this.btnXoaThongtin = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.grbDiemSo = new System.Windows.Forms.GroupBox();
-            this.txtDiemHeCSDL = new System.Windows.Forms.TextBox();
-            this.txtDiemWeb = new System.Windows.Forms.TextBox();
-            this.txtDiemCTDL = new System.Windows.Forms.TextBox();
+            this.txtDiemHoa = new System.Windows.Forms.TextBox();
+            this.txtDiemLy = new System.Windows.Forms.TextBox();
+            this.txtDiemToan = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -112,9 +112,9 @@
             // 
             // grbDiemSo
             // 
-            this.grbDiemSo.Controls.Add(this.txtDiemHeCSDL);
-            this.grbDiemSo.Controls.Add(this.txtDiemWeb);
-            this.grbDiemSo.Controls.Add(this.txtDiemCTDL);
+            this.grbDiemSo.Controls.Add(this.txtDiemHoa);
+            this.grbDiemSo.Controls.Add(this.txtDiemLy);
+            this.grbDiemSo.Controls.Add(this.txtDiemToan);
             this.grbDiemSo.Controls.Add(this.label9);
             this.grbDiemSo.Controls.Add(this.label8);
             this.grbDiemSo.Controls.Add(this.label7);
@@ -127,26 +127,26 @@
             this.grbDiemSo.TabStop = false;
             this.grbDiemSo.Text = "Điểm số";
             // 
-            // txtDiemHeCSDL
+            // txtDiemHoa
             // 
-            this.txtDiemHeCSDL.Location = new System.Drawing.Point(168, 91);
-            this.txtDiemHeCSDL.Name = "txtDiemHeCSDL";
-            this.txtDiemHeCSDL.Size = new System.Drawing.Size(213, 23);
-            this.txtDiemHeCSDL.TabIndex = 2;
+            this.txtDiemHoa.Location = new System.Drawing.Point(168, 91);
+            this.txtDiemHoa.Name = "txtDiemHoa";
+            this.txtDiemHoa.Size = new System.Drawing.Size(213, 23);
+            this.txtDiemHoa.TabIndex = 2;
             // 
-            // txtDiemWeb
+            // txtDiemLy
             // 
-            this.txtDiemWeb.Location = new System.Drawing.Point(168, 57);
-            this.txtDiemWeb.Name = "txtDiemWeb";
-            this.txtDiemWeb.Size = new System.Drawing.Size(213, 23);
-            this.txtDiemWeb.TabIndex = 1;
+            this.txtDiemLy.Location = new System.Drawing.Point(168, 57);
+            this.txtDiemLy.Name = "txtDiemLy";
+            this.txtDiemLy.Size = new System.Drawing.Size(213, 23);
+            this.txtDiemLy.TabIndex = 1;
             // 
-            // txtDiemCTDL
+            // txtDiemToan
             // 
-            this.txtDiemCTDL.Location = new System.Drawing.Point(168, 19);
-            this.txtDiemCTDL.Name = "txtDiemCTDL";
-            this.txtDiemCTDL.Size = new System.Drawing.Size(213, 23);
-            this.txtDiemCTDL.TabIndex = 0;
+            this.txtDiemToan.Location = new System.Drawing.Point(168, 19);
+            this.txtDiemToan.Name = "txtDiemToan";
+            this.txtDiemToan.Size = new System.Drawing.Size(213, 23);
+            this.txtDiemToan.TabIndex = 0;
             // 
             // label9
             // 
@@ -154,9 +154,9 @@
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label9.Location = new System.Drawing.Point(21, 91);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(106, 19);
+            this.label9.Size = new System.Drawing.Size(79, 19);
             this.label9.TabIndex = 1;
-            this.label9.Text = "Điểm Hệ CSDL:";
+            this.label9.Text = "Điểm Hóa:";
             // 
             // label8
             // 
@@ -164,9 +164,9 @@
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label8.Location = new System.Drawing.Point(21, 57);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(141, 19);
+            this.label8.Size = new System.Drawing.Size(64, 19);
             this.label8.TabIndex = 1;
-            this.label8.Text = "Điểm Lập Trình Web:";
+            this.label8.Text = "Điểm Lý:";
             // 
             // label7
             // 
@@ -174,9 +174,9 @@
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label7.Location = new System.Drawing.Point(21, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 19);
+            this.label7.Size = new System.Drawing.Size(83, 19);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Điểm CTDLGT:";
+            this.label7.Text = "Điểm Toán:";
             // 
             // grbThongTinSinhVien
             // 
@@ -228,19 +228,24 @@
             // 
             // cbLop
             // 
+            this.cbLop.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLop.FormattingEnabled = true;
             this.cbLop.Location = new System.Drawing.Point(132, 183);
             this.cbLop.Name = "cbLop";
-            this.cbLop.Size = new System.Drawing.Size(303, 25);
+            this.cbLop.Size = new System.Drawing.Size(303, 23);
             this.cbLop.TabIndex = 6;
+            this.cbLop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbLop_KeyPress);
             // 
             // cbNganh
             // 
+            this.cbNganh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNganh.FormattingEnabled = true;
             this.cbNganh.Location = new System.Drawing.Point(132, 151);
             this.cbNganh.Name = "cbNganh";
-            this.cbNganh.Size = new System.Drawing.Size(303, 25);
+            this.cbNganh.Size = new System.Drawing.Size(303, 23);
             this.cbNganh.TabIndex = 6;
+            this.cbNganh.SelectedIndexChanged += new System.EventHandler(this.cbNganh_SelectedIndexChanged);
+            this.cbNganh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbNganh_KeyPress);
             // 
             // txtThang
             // 
@@ -479,9 +484,9 @@
         private System.Windows.Forms.Button btnXoaThongtin;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.GroupBox grbDiemSo;
-        private System.Windows.Forms.TextBox txtDiemHeCSDL;
-        private System.Windows.Forms.TextBox txtDiemWeb;
-        private System.Windows.Forms.TextBox txtDiemCTDL;
+        private System.Windows.Forms.TextBox txtDiemHoa;
+        private System.Windows.Forms.TextBox txtDiemLy;
+        private System.Windows.Forms.TextBox txtDiemToan;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

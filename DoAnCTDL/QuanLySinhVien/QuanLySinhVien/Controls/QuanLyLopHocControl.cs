@@ -94,7 +94,7 @@ namespace QuanLySinhVien
             Validation vali = new Validation();
 
             content += vali.Check_Select_Combobox("Ngành", cbNganh);
-            content += vali.Check_Empty_textbox_("Mã Lớp", txtMaLop);
+            content += vali.Check_Empty_textbox("Mã Lớp", txtMaLop);
 
             if ( content == "" )
             {

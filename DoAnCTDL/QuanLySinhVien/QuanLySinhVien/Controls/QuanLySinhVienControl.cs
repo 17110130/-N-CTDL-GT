@@ -29,6 +29,7 @@ namespace QuanLySinhVien
             cbLop.Text = "--Mời chọn lớp--";
             cbNganh.Text = "--Mời chọn ngành--";
             Show_Info_ListViewSV();
+            Show_ComboboxNganh();
 
         }
          
@@ -56,17 +57,46 @@ namespace QuanLySinhVien
             }
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void Show_ComboboxNganh()
+        {
+            cbNganh.Items.Clear();
+            LinkedListSV<Nganh>.Node Node = CSDL_N.pHead;
+            while( Node != null )
+            {
+                cbNganh.Items.Add(Node.data.TenNganh);
+                Node = Node.pNext;
+            }
+        }
+        private void Show_ComboboxLopHoc(string name)
+        {
+            cbLop.Items.Clear();
+            LinkedListSV<Nganh>.Node NodeNganh = CSDL_N.pHead;
+            while( NodeNganh != null )
+            {
+                LinkedListSV<LopHoc>.Node NodeLopHoc = NodeNganh.data.DsLH.pHead;
+                while( NodeLopHoc != null )
+                {
+                    if ( NodeNganh.data.TenNganh == name )
+                    {
+                        cbLop.Items.Add(NodeLopHoc.data.TenLopHoc);
+                    }
+                    NodeLopHoc = NodeLopHoc.pNext;
+                }
+                NodeNganh = NodeNganh.pNext;
+            }
+        }
+
+        private bool Check_Luu()
         {
             string content = "";
             Validation validation = new Validation();
             content += validation.IsDigit("MSSV", txtMSSV);
-            if ( content == "" )
+            if (content == "")
             {
                 LinkedListSV<SinhVien>.Node NodeSV = CSDL_SV.pHead;
-                while ( NodeSV != null )
+                while (NodeSV != null)
                 {
-                    if ( NodeSV.data.Id == int.Parse(txtMSSV.Text) )
+                    if (NodeSV.data.Id == int.Parse(txtMSSV.Text))
                     {
                         content += "Mã số sinh viên đã tồn tại!\n";
                     }
@@ -76,7 +106,87 @@ namespace QuanLySinhVien
             content += validation.IsString("Tên sinh viên", txtTenSinhVien);
             content += validation.Check_radio(radNam, radNu);
             content += validation.Check_Date(txtNgay, txtThang, txtNam);
+            content += validation.Check_Combobox("Ngành", cbNganh);
+            content += validation.Check_Combobox("Lớp", cbLop);
+            content += validation.Check_Diem("Điểm Toán", txtDiemToan);
+            content += validation.Check_Diem("Điểm Lý", txtDiemLy);
+            content += validation.Check_Diem("Điểm Hóa", txtDiemHoa);
 
+            if (content != "")
+            {
+                MessageBox.Show(content, "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            SinhVien sv = new SinhVien();
+            sv.Id = int.Parse(txtMSSV.Text);
+            sv.Name = txtTenSinhVien.Text;
+
+            bool sex = radNam.Checked ? true : false;
+            sv.Sex = sex;
+
+            sv.DoB = new DateTime(int.Parse(txtNam.Text), int.Parse(txtThang.Text), int.Parse(txtNgay.Text));
+
+            sv.Mscores = double.Parse(txtDiemToan.Text);
+            sv.Pscores = double.Parse(txtDiemLy.Text);
+            sv.Cscores = double.Parse(txtDiemHoa.Text);
+
+            string nganh = this.cbNganh.GetItemText(this.cbNganh.SelectedItem);
+            LinkedListSV<Nganh>.Node NodeNganh = CSDL_N.pHead;
+            while (NodeNganh != null)
+            {
+                if (NodeNganh.data.TenNganh == nganh)
+                    break;
+                NodeNganh = NodeNganh.pNext;
+            }
+
+            LinkedListSV<LopHoc>.Node NodeLop = NodeNganh.data.DsLH.pHead;
+            string lop = cbLop.GetItemText(cbLop.SelectedItem);
+            while (NodeLop != null)
+            {
+                if (NodeLop.data.TenLopHoc == lop)
+                {
+                    sv.Classmajor = NodeLop.data;
+                    NodeLop.data.DsSV.AddHead(sv);
+                    break;
+                }
+                NodeLop = NodeLop.pNext;
+            }
+
+            CSDL_SV.AddHead(sv);
+            return true;
+
+        }
+
+        private void Clear()
+        {
+            btnLuu.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = true;
+
+            txtMSSV.Text = "";
+            txtTenSinhVien.Text = "";
+            txtNgay.Text = "";
+            txtThang.Text = "";
+            txtNam.Text = "";
+            radNam.Checked = false;
+            radNu.Checked = false;
+            cbNganh.Text = "--Mời chọn ngành--";
+            cbLop.Text = "--Mời chọn lớp--";
+            txtDiemToan.Text = "";
+            txtDiemLy.Text = "";
+            txtDiemHoa.Text = "";
+
+        }
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+           if ( Check_Luu() == true )
+            {
+                MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Show_Info_ListViewSV();
+                Clear();
+                
+            }
         }
 
         private void DeleteSV(int IdDel)
@@ -111,6 +221,25 @@ namespace QuanLySinhVien
 
         }
 
-       
+        private void cbNganh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cbLop_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cbNganh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbNganh.SelectedIndex == -1)
+                return;
+            cbLop.SelectedIndex = -1;
+            cbLop.Items.Clear();
+            cbLop.Text = "--Mời chọn lớp--";
+            string nganh = this.cbNganh.GetItemText(this.cbNganh.SelectedItem);
+            Show_ComboboxLopHoc(nganh);
+        }
     }
 }

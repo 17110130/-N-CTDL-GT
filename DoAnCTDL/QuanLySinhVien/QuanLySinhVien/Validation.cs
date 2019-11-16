@@ -29,10 +29,10 @@ namespace QuanLySinhVien
             string content = Check_Empty_textbox(name, txt);
             if (content != "")
                 return content;
-            foreach (char c in name )
+            Regex regex = new Regex("^[0-9]+$");
+            if (!regex.IsMatch(txt.Text))
             {
-                if (char.IsDigit(c) == false)
-                    return name + " phải là số!\n";
+                return name + " phải là SỐ\n";
             }
             return "";
         }
@@ -82,6 +82,24 @@ namespace QuanLySinhVien
             if (int.Parse(txtDay.Text) < 1 || int.Parse(txtDay.Text) > arrDay[int.Parse(txtMonth.Text)])
                 return "Ngày sinh không hợp lệ\n";
 
+            return "";
+
+        }
+
+        public string Check_Combobox(string name,ComboBox cb)
+        {
+            if ( cb.SelectedIndex == -1 )
+                return "Hãy chọn " + name + "\n";
+            return "";
+        }
+
+        public string Check_Diem(string name,TextBox txt)
+        {
+            string content = Check_Empty_textbox(name, txt);
+            if (content != "")
+                return content;
+            if (double.Parse(txt.Text) < 0 || double.Parse(txt.Text) > 10)
+                return name + " không hợp lệ!\n";
             return "";
         }
     }
