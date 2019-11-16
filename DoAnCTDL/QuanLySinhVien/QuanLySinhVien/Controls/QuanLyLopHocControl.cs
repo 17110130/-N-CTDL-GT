@@ -32,6 +32,7 @@ namespace QuanLySinhVien
             Show_Treeview();
             Show_Combobox();
             lvDanhSachLop.Items.Clear();
+            cbNganh.Text = "--Mời chọn ngành--";
 
         }
 
@@ -72,7 +73,7 @@ namespace QuanLySinhVien
             {
                 ListViewItem lviSV = new ListViewItem(NodeLop.data.MaLopHoc);
                 lviSV.SubItems.Add(NodeLop.data.TenLopHoc);
-                lviSV.SubItems.Add(NodeLop.data.dsSV.count.ToString());
+                lviSV.SubItems.Add(NodeLop.data.DsSV.count.ToString());
 
                 lvDanhSachLop.Items.Add(lviSV);
                 NodeLop = NodeLop.pNext;

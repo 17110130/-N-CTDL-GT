@@ -39,12 +39,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.grbThongTinSinhVien = new System.Windows.Forms.GroupBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.radNu = new System.Windows.Forms.RadioButton();
+            this.radNam = new System.Windows.Forms.RadioButton();
+            this.cbLop = new System.Windows.Forms.ComboBox();
+            this.cbNganh = new System.Windows.Forms.ComboBox();
             this.txtThang = new System.Windows.Forms.TextBox();
             this.txtNgay = new System.Windows.Forms.TextBox();
             this.txtNam = new System.Windows.Forms.TextBox();
-            this.txtLop = new System.Windows.Forms.TextBox();
-            this.txtNganh = new System.Windows.Forms.TextBox();
             this.txtTenSinhVien = new System.Windows.Forms.TextBox();
             this.txtMSSV = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,21 +55,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lvThongTinSV = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clMSSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clDiemCTDL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clDiemLapTrinhWeb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clDiemHeCSDL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.grbDiemSo.SuspendLayout();
             this.grbThongTinSinhVien.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -176,12 +179,13 @@
             // 
             // grbThongTinSinhVien
             // 
-            this.grbThongTinSinhVien.Controls.Add(this.checkedListBox1);
+            this.grbThongTinSinhVien.Controls.Add(this.radNu);
+            this.grbThongTinSinhVien.Controls.Add(this.radNam);
+            this.grbThongTinSinhVien.Controls.Add(this.cbLop);
+            this.grbThongTinSinhVien.Controls.Add(this.cbNganh);
             this.grbThongTinSinhVien.Controls.Add(this.txtThang);
             this.grbThongTinSinhVien.Controls.Add(this.txtNgay);
             this.grbThongTinSinhVien.Controls.Add(this.txtNam);
-            this.grbThongTinSinhVien.Controls.Add(this.txtLop);
-            this.grbThongTinSinhVien.Controls.Add(this.txtNganh);
             this.grbThongTinSinhVien.Controls.Add(this.txtTenSinhVien);
             this.grbThongTinSinhVien.Controls.Add(this.txtMSSV);
             this.grbThongTinSinhVien.Controls.Add(this.label6);
@@ -199,17 +203,43 @@
             this.grbThongTinSinhVien.TabStop = false;
             this.grbThongTinSinhVien.Text = "Thông tin sinh viên";
             // 
-            // checkedListBox1
+            // radNu
             // 
-            this.checkedListBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.checkedListBox1.Location = new System.Drawing.Point(132, 85);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(302, 22);
-            this.checkedListBox1.TabIndex = 2;
+            this.radNu.AutoSize = true;
+            this.radNu.Location = new System.Drawing.Point(269, 89);
+            this.radNu.Name = "radNu";
+            this.radNu.Size = new System.Drawing.Size(43, 21);
+            this.radNu.TabIndex = 7;
+            this.radNu.TabStop = true;
+            this.radNu.Text = "Nữ";
+            this.radNu.UseVisualStyleBackColor = true;
+            // 
+            // radNam
+            // 
+            this.radNam.AutoSize = true;
+            this.radNam.Location = new System.Drawing.Point(132, 89);
+            this.radNam.Name = "radNam";
+            this.radNam.Size = new System.Drawing.Size(58, 21);
+            this.radNam.TabIndex = 7;
+            this.radNam.TabStop = true;
+            this.radNam.Text = "Nam";
+            this.radNam.UseVisualStyleBackColor = true;
+            // 
+            // cbLop
+            // 
+            this.cbLop.FormattingEnabled = true;
+            this.cbLop.Location = new System.Drawing.Point(132, 183);
+            this.cbLop.Name = "cbLop";
+            this.cbLop.Size = new System.Drawing.Size(303, 25);
+            this.cbLop.TabIndex = 6;
+            // 
+            // cbNganh
+            // 
+            this.cbNganh.FormattingEnabled = true;
+            this.cbNganh.Location = new System.Drawing.Point(132, 151);
+            this.cbNganh.Name = "cbNganh";
+            this.cbNganh.Size = new System.Drawing.Size(303, 25);
+            this.cbNganh.TabIndex = 6;
             // 
             // txtThang
             // 
@@ -231,20 +261,6 @@
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(85, 23);
             this.txtNam.TabIndex = 5;
-            // 
-            // txtLop
-            // 
-            this.txtLop.Location = new System.Drawing.Point(132, 180);
-            this.txtLop.Name = "txtLop";
-            this.txtLop.Size = new System.Drawing.Size(303, 23);
-            this.txtLop.TabIndex = 7;
-            // 
-            // txtNganh
-            // 
-            this.txtNganh.Location = new System.Drawing.Point(132, 147);
-            this.txtNganh.Name = "txtNganh";
-            this.txtNganh.Size = new System.Drawing.Size(303, 23);
-            this.txtNganh.TabIndex = 6;
             // 
             // txtTenSinhVien
             // 
@@ -323,14 +339,94 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.lvThongTinSV);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnSua);
-            this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(881, 251);
             this.panel2.TabIndex = 0;
+            // 
+            // lvThongTinSV
+            // 
+            this.lvThongTinSV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10});
+            this.lvThongTinSV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lvThongTinSV.HideSelection = false;
+            this.lvThongTinSV.Location = new System.Drawing.Point(0, 0);
+            this.lvThongTinSV.Name = "lvThongTinSV";
+            this.lvThongTinSV.Size = new System.Drawing.Size(881, 182);
+            this.lvThongTinSV.TabIndex = 3;
+            this.lvThongTinSV.UseCompatibleStateImageBehavior = false;
+            this.lvThongTinSV.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "MSSV";
+            this.columnHeader1.Width = 95;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tên sinh viên";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 150;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Giới tính";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Ngày sinh";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 90;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Điểm Toán";
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader5.Width = 90;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Điểm Lý";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader6.Width = 90;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Điểm Hóa";
+            this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader7.Width = 90;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Điểm TB";
+            this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader8.Width = 90;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Lớp";
+            this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader9.Width = 100;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Nghành";
+            this.columnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader10.Width = 150;
             // 
             // btnXoa
             // 
@@ -355,61 +451,6 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.DimGray;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clMSSV,
-            this.clTen,
-            this.clGioiTinh,
-            this.clNgaySinh,
-            this.clDiemCTDL,
-            this.clDiemLapTrinhWeb,
-            this.clDiemHeCSDL});
-            this.dataGridView1.Location = new System.Drawing.Point(17, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(848, 170);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // clMSSV
-            // 
-            this.clMSSV.HeaderText = "MSSV";
-            this.clMSSV.Name = "clMSSV";
-            // 
-            // clTen
-            // 
-            this.clTen.HeaderText = "Tên";
-            this.clTen.Name = "clTen";
-            // 
-            // clGioiTinh
-            // 
-            this.clGioiTinh.HeaderText = "Giới tính";
-            this.clGioiTinh.Name = "clGioiTinh";
-            // 
-            // clNgaySinh
-            // 
-            this.clNgaySinh.HeaderText = "Ngày Sinh";
-            this.clNgaySinh.Name = "clNgaySinh";
-            // 
-            // clDiemCTDL
-            // 
-            this.clDiemCTDL.HeaderText = "Điểm CTDL&GT";
-            this.clDiemCTDL.Name = "clDiemCTDL";
-            // 
-            // clDiemLapTrinhWeb
-            // 
-            this.clDiemLapTrinhWeb.HeaderText = "Điểm Lập Trình Web";
-            this.clDiemLapTrinhWeb.Name = "clDiemLapTrinhWeb";
-            // 
-            // clDiemHeCSDL
-            // 
-            this.clDiemHeCSDL.HeaderText = "Điểm Hệ CSDL";
-            this.clDiemHeCSDL.Name = "clDiemHeCSDL";
-            // 
             // QuanLySinhVienControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,7 +465,6 @@
             this.grbThongTinSinhVien.ResumeLayout(false);
             this.grbThongTinSinhVien.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -435,7 +475,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnXoaThongtin;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.GroupBox grbDiemSo;
@@ -449,8 +488,6 @@
         private System.Windows.Forms.GroupBox grbThongTinSinhVien;
         private System.Windows.Forms.TextBox txtThang;
         private System.Windows.Forms.TextBox txtNgay;
-        private System.Windows.Forms.TextBox txtLop;
-        private System.Windows.Forms.TextBox txtNganh;
         private System.Windows.Forms.TextBox txtTenSinhVien;
         private System.Windows.Forms.TextBox txtMSSV;
         private System.Windows.Forms.Label label6;
@@ -459,13 +496,20 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clMSSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clGioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clNgaySinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clDiemCTDL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clDiemLapTrinhWeb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clDiemHeCSDL;
+        private System.Windows.Forms.ListView lvThongTinSV;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ComboBox cbLop;
+        private System.Windows.Forms.ComboBox cbNganh;
+        private System.Windows.Forms.RadioButton radNu;
+        private System.Windows.Forms.RadioButton radNam;
     }
 }

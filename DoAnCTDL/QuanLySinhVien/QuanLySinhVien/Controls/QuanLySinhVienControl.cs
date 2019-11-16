@@ -13,16 +13,47 @@ namespace QuanLySinhVien
     public partial class QuanLySinhVienControl : UserControl
     {
         private LinkedListSV<SinhVien> CSDL_SV;
-        private LinkedListSV<LopHoc> CSDL_Lop;
+        private LinkedListSV<LopHoc> CSDL_LH;
+        private LinkedListSV<Nganh> CSDL_N;
 
         public QuanLySinhVienControl()
         {
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        internal void Get_Data(LinkedListSV<SinhVien> CSDL_SV,LinkedListSV<LopHoc> CSDL_LH, LinkedListSV<Nganh> CSDL_N)
         {
+            this.CSDL_SV = CSDL_SV;
+            this.CSDL_LH = CSDL_LH;
+            this.CSDL_N = CSDL_N;
+            cbLop.Text = "--Mời chọn lớp--";
+            cbNganh.Text = "--Mời chọn ngành--";
+            Show_Info_ListViewSV();
 
+        }
+         
+        private void Show_Info_ListViewSV()
+        {
+            lvThongTinSV.Items.Clear();
+            LinkedListSV<SinhVien>.Node NodeSV = CSDL_SV.pHead;
+            while( NodeSV != null )
+            {
+                ListViewItem lviSV = new ListViewItem(NodeSV.data.Id.ToString());
+                lviSV.SubItems.Add(NodeSV.data.Name);
+                string gioitinh = NodeSV.data.Sex == true ? "Nam" : "Nữ";
+                lviSV.SubItems.Add(gioitinh);
+                lviSV.SubItems.Add(NodeSV.data.DoB.ToString("dd/MM/yyyy"));
+                lviSV.SubItems.Add(NodeSV.data.Mscores.ToString());
+                lviSV.SubItems.Add(NodeSV.data.Pscores.ToString());
+                lviSV.SubItems.Add(NodeSV.data.Cscores.ToString());
+                lviSV.SubItems.Add(Math.Round(NodeSV.data.AvgScores(), 3).ToString());
+                lviSV.SubItems.Add(NodeSV.data.Classmajor.TenLopHoc);
+                lviSV.SubItems.Add(NodeSV.data.Classmajor.NganhChuQuan.TenNganh);
+
+                lvThongTinSV.Items.Add(lviSV);
+
+                NodeSV = NodeSV.pNext;
+            }
         }
         private void DeleteSV(int IdDel)
         {

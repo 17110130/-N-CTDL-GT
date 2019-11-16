@@ -33,18 +33,40 @@ namespace QuanLySinhVien
             LopHoc cl1 = new LopHoc();
             cl1.MaLopHoc = "CNTT_1711";
             cl1.TenLopHoc = "171101LC1";
+            cl1.NganhChuQuan = cntt;
 
             SinhVien sv1 = new SinhVien();
             sv1.Id = 17110101;
             sv1.Name = "Nguyễn Văn A";
             sv1.Sex = true;
+            sv1.Classmajor = cl1;
 
             cntt.DsLH.AddHead(cl1);
-            cl1.dsSV.AddHead(sv1);
-
+            cl1.DsSV.AddHead(sv1);
             CSDL_SV.AddHead(sv1);
             CSDL_LH.AddHead(cl1);
             CSDL_N.AddHead(cntt);
+
+            Nganh kinhte = new Nganh();
+            kinhte.MaNganh = "KT";
+            kinhte.TenNganh = "Kinh tế";
+
+            LopHoc kt1 = new LopHoc();
+            kt1.MaLopHoc = "KT_1722";
+            kt1.TenLopHoc = "17220130CL2";
+            kt1.NganhChuQuan = kinhte;
+
+            SinhVien sv2 = new SinhVien();
+            sv2.Id = 17220130;
+            sv2.Name = "Nguyễn Thị B";
+            sv2.Sex = false;
+            sv2.Classmajor = kt1;
+
+            kinhte.DsLH.AddHead(kt1);
+            kt1.DsSV.AddHead(sv2);
+            CSDL_SV.AddHead(sv2);
+            CSDL_LH.AddHead(kt1);
+            CSDL_N.AddHead(kinhte);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -60,6 +82,7 @@ namespace QuanLySinhVien
         {
             quanLySinhVienControl1.BringToFront();
             lbTitle.Text = "Quản lý sinh viên";
+            quanLySinhVienControl1.Get_Data(CSDL_SV, CSDL_LH, CSDL_N);
         }
 
         private void btnQLLH_Click(object sender, EventArgs e)

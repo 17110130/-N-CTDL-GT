@@ -12,6 +12,7 @@ namespace QuanLySinhVien
         private string name;
         private bool sex;
         private DateTime doB; // ngày sinh
+        private LopHoc classmajor; // Lớp chủ quản chính
         private double mScores; // điểm toán
         private double pScores; // điểm lý
         private double cScores; // điểm hóa
@@ -54,6 +55,12 @@ namespace QuanLySinhVien
         {
             get { return cScores; }
             set { cScores = value; }
+        }
+
+        public LopHoc Classmajor
+        {
+            get { return classmajor; }
+            set { classmajor = value; }
         }
 
         public double AvgScores()
