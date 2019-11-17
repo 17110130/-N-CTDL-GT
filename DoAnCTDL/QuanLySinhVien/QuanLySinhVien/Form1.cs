@@ -39,6 +39,7 @@ namespace QuanLySinhVien
             sv1.Id = 17110101;
             sv1.Name = "Nguyễn Văn A";
             sv1.Sex = true;
+           
             sv1.Classmajor = cl1;
 
             cntt.DsLH.AddHead(cl1);

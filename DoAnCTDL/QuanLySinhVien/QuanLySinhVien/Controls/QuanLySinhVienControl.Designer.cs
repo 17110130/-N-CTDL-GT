@@ -97,6 +97,7 @@
             this.btnXoaThongtin.TabIndex = 3;
             this.btnXoaThongtin.Text = "Xóa Thông Tin";
             this.btnXoaThongtin.UseVisualStyleBackColor = true;
+            this.btnXoaThongtin.Click += new System.EventHandler(this.btnXoaThongtin_Click);
             // 
             // btnLuu
             // 
@@ -356,6 +357,7 @@
             // 
             // lvThongTinSV
             // 
+            this.lvThongTinSV.BackColor = System.Drawing.Color.Coral;
             this.lvThongTinSV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -368,6 +370,7 @@
             this.columnHeader9,
             this.columnHeader10});
             this.lvThongTinSV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lvThongTinSV.FullRowSelect = true;
             this.lvThongTinSV.HideSelection = false;
             this.lvThongTinSV.Location = new System.Drawing.Point(0, 0);
             this.lvThongTinSV.Name = "lvThongTinSV";
@@ -375,6 +378,7 @@
             this.lvThongTinSV.TabIndex = 3;
             this.lvThongTinSV.UseCompatibleStateImageBehavior = false;
             this.lvThongTinSV.View = System.Windows.Forms.View.Details;
+            this.lvThongTinSV.DoubleClick += new System.EventHandler(this.lvThongTinSV_DoubleClick);
             // 
             // columnHeader1
             // 
@@ -448,6 +452,7 @@
             // 
             // btnSua
             // 
+            this.btnSua.Enabled = false;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSua.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Location = new System.Drawing.Point(478, 188);
@@ -456,6 +461,7 @@
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // QuanLySinhVienControl
             // 

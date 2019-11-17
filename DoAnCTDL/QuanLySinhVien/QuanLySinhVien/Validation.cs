@@ -13,7 +13,7 @@ namespace QuanLySinhVien
         public string Check_Empty_textbox(string s,TextBox txt)
         {
             if (txt.Text == "")
-                return s + " Không được để trống!";
+                return s + " Không được để trống!\n";
             return "";
         }
 

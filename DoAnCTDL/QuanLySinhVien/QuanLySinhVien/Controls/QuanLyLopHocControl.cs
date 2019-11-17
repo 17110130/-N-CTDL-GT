@@ -32,7 +32,7 @@ namespace QuanLySinhVien
             Show_Treeview();
             Show_Combobox();
             lvDanhSachLop.Items.Clear();
-            cbNganh.Text = "--Mời chọn ngành--";
+            cbNganh.Text = "------Mời chọn ngành------";
 
         }
 
@@ -67,7 +67,7 @@ namespace QuanLySinhVien
                 NodeNganh = NodeNganh.pNext;
             }
 
-            LinkedListSV<LopHoc>.Node NodeLop = CSDL_LH.pHead;
+            LinkedListSV<LopHoc>.Node NodeLop = NodeNganh.data.DsLH.pHead;
 
             while (NodeLop != null )
             {
@@ -122,6 +122,54 @@ namespace QuanLySinhVien
             
         }
 
+        private void cbNganh_SelectedIndexChanged(object sender, EventArgs e)
+        {          
+            Show_ListView_Information(cbNganh.Text);   
+        }
 
+        private bool Check_Add()
+        {
+            string content = "";
+            Validation validation = new Validation();
+            content += validation.Check_Combobox("Ngành", cbNganh);
+            content += validation.Check_Empty_textbox("Mã lớp", txtMaLop);
+
+            if (content == "")
+            {
+                LinkedListSV<LopHoc>.Node Node = CSDL_LH.pHead;
+                while( Node != null )
+                {
+                    if ( Node.data.MaLopHoc == txtMaLop.Text )
+                    {
+                        content += "Mã lớp đã tồn tại!";
+                        break;
+                    }
+                    Node = Node.pNext;
+                }
+            }
+            content += validation.IsString("Tên lớp", txtTenLop);
+            if (content != "")
+            {
+                MessageBox.Show(content, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            LopHoc lop = new LopHoc();
+            lop.MaLopHoc = txtMaLop.Text;
+            lop.TenLopHoc = txtTenLop.Text;
+            /// Làm tơi đây ==> thêm ngành chủ quản
+            string ngan
+            LinkedListSV<Nganh>.Node NodeN = CSDL_N.pHead;
+            while(NodeN.data.TenNganh != cbNganh.Text)
+            {
+                NodeN = NodeN.pNext;
+            }
+        }
+
+        private void btnThemLop_Click(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }

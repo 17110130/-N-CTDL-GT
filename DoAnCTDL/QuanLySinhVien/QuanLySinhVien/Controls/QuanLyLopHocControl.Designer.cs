@@ -37,6 +37,7 @@ namespace QuanLySinhVien
             this.tvNganh = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cbNganh = new System.Windows.Forms.ComboBox();
             this.btnXoaThongTinLop = new System.Windows.Forms.Button();
             this.btnThemLop = new System.Windows.Forms.Button();
             this.txtTenLop = new System.Windows.Forms.TextBox();
@@ -47,13 +48,12 @@ namespace QuanLySinhVien
             this.panel3 = new System.Windows.Forms.Panel();
             this.grbDanhSachLop = new System.Windows.Forms.GroupBox();
             this.lvDanhSachLop = new System.Windows.Forms.ListView();
-            this.btnXoaLop = new System.Windows.Forms.Button();
-            this.btnSuaLop = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.cbNganh = new System.Windows.Forms.ComboBox();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnXoaLop = new System.Windows.Forms.Button();
+            this.btnSuaLop = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.grbDanhSachNganh.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -120,6 +120,16 @@ namespace QuanLySinhVien
             this.panel4.Size = new System.Drawing.Size(660, 267);
             this.panel4.TabIndex = 1;
             // 
+            // cbNganh
+            // 
+            this.cbNganh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNganh.FormattingEnabled = true;
+            this.cbNganh.Location = new System.Drawing.Point(110, 23);
+            this.cbNganh.Name = "cbNganh";
+            this.cbNganh.Size = new System.Drawing.Size(527, 27);
+            this.cbNganh.TabIndex = 5;
+            this.cbNganh.SelectedIndexChanged += new System.EventHandler(this.cbNganh_SelectedIndexChanged);
+            // 
             // btnXoaThongTinLop
             // 
             this.btnXoaThongTinLop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -141,6 +151,7 @@ namespace QuanLySinhVien
             this.btnThemLop.TabIndex = 3;
             this.btnThemLop.Text = "Thêm";
             this.btnThemLop.UseVisualStyleBackColor = true;
+            this.btnThemLop.Click += new System.EventHandler(this.btnThemLop_Click);
             // 
             // txtTenLop
             // 
@@ -224,6 +235,21 @@ namespace QuanLySinhVien
             this.lvDanhSachLop.UseCompatibleStateImageBehavior = false;
             this.lvDanhSachLop.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Mã Lớp";
+            this.columnHeader1.Width = 140;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tên Lớp";
+            this.columnHeader2.Width = 329;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Số lượng sinh viên";
+            this.columnHeader3.Width = 158;
+            // 
             // btnXoaLop
             // 
             this.btnXoaLop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -247,30 +273,6 @@ namespace QuanLySinhVien
             this.btnSuaLop.Text = "Sửa";
             this.btnSuaLop.UseVisualStyleBackColor = true;
             this.btnSuaLop.Click += new System.EventHandler(this.btnSuaLop_Click);
-            // 
-            // cbNganh
-            // 
-            this.cbNganh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbNganh.FormattingEnabled = true;
-            this.cbNganh.Location = new System.Drawing.Point(110, 23);
-            this.cbNganh.Name = "cbNganh";
-            this.cbNganh.Size = new System.Drawing.Size(527, 27);
-            this.cbNganh.TabIndex = 5;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Mã Lớp";
-            this.columnHeader1.Width = 140;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tên Lớp";
-            this.columnHeader2.Width = 329;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Số lượng sinh viên";
-            this.columnHeader3.Width = 158;
             // 
             // QuanLyLopHocControl
             // 

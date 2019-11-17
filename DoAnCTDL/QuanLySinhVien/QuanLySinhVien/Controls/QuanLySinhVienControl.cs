@@ -26,8 +26,8 @@ namespace QuanLySinhVien
             this.CSDL_SV = CSDL_SV;
             this.CSDL_LH = CSDL_LH;
             this.CSDL_N = CSDL_N;
-            cbLop.Text = "--Mời chọn lớp--";
-            cbNganh.Text = "--Mời chọn ngành--";
+            cbLop.Text = "------Mời chọn lớp------";
+            cbNganh.Text = "------Mời chọn ngành------";
             Show_Info_ListViewSV();
             Show_ComboboxNganh();
 
@@ -67,6 +67,7 @@ namespace QuanLySinhVien
                 Node = Node.pNext;
             }
         }
+
         private void Show_ComboboxLopHoc(string name)
         {
             cbLop.Items.Clear();
@@ -171,13 +172,14 @@ namespace QuanLySinhVien
             txtNam.Text = "";
             radNam.Checked = false;
             radNu.Checked = false;
-            cbNganh.Text = "--Mời chọn ngành--";
-            cbLop.Text = "--Mời chọn lớp--";
+            cbNganh.Text = "------Mời chọn ngành------";
+            cbLop.Text = "------Mời chọn lớp------";
             txtDiemToan.Text = "";
             txtDiemLy.Text = "";
             txtDiemHoa.Text = "";
 
         }
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
            if ( Check_Luu() == true )
@@ -189,36 +191,64 @@ namespace QuanLySinhVien
             }
         }
 
-        private void DeleteSV(int IdDel)
+        private void Handling_Delete(int mssvDel)
         {
-            // delete student 
-            //for (var nodeSV = CSDL_SV.pHead; nodeSV != null; nodeSV = nodeSV.pNext)
-            //{
-            //    if (nodeSV.data.Id == IdDel)
-            //    {
-            //        CSDL_SV.RemoveNode(nodeSV);
-            //        break;
-            //    }
-            //}
-            //// delete student in class
+            if (lvThongTinSV.SelectedItems.Count > 0)
+            {
+                LinkedListSV<SinhVien>.Node NodeSV = CSDL_SV.pHead;
+                while (NodeSV != null)
+                {
+                    if (NodeSV.data.Id == mssvDel)
+                    {
+                        CSDL_SV.RemoveNode(NodeSV);
+                        break;
+                    }
+                    NodeSV = NodeSV.pNext;
+                }
 
-            //for (var nodeLopHoc = CSDL_Lop.pHead; nodeLopHoc != null; nodeLopHoc = nodeLopHoc.pNext)
-            //{
-            //    foreach (var sinhVien in nodeLopHoc.data.DsSV)
-            //    {
-            //        if (sinhVien.Id == IdDel)
-            //        {
-            //            nodeLopHoc.data.DsSV.Remove(sinhVien);
-            //            break;
-            //        }
-            //    }
-            //}
-
+                // XÓa Sinh viên trong lớp học
+                LinkedListSV<LopHoc>.Node NodeLop = CSDL_LH.pHead;
+                while (NodeLop != null)
+                {
+                    if (NodeLop.data.MaLopHoc == NodeSV.data.Classmajor.MaLopHoc)
+                    {
+                        LinkedListSV<SinhVien>.Node NodeSVLop = NodeLop.data.DsSV.pHead;
+                        while (NodeSVLop != null)
+                        {
+                            if (NodeSVLop.data.Id == NodeSV.data.Id)
+                            {
+                                NodeLop.data.DsSV.RemoveNode(NodeSVLop);
+                                break;
+                            }
+                            NodeSVLop = NodeSVLop.pNext;
+                        }
+                        break;
+                    }
+                    NodeLop = NodeLop.pNext;
+                }
+            }
         }
-
+      
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if ( lvThongTinSV.SelectedItems.Count > 0 )
+            {
+                DialogResult choose = MessageBox.Show("Bạn có chắc chắn muốn xóa ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (choose == DialogResult.Yes)
+                {
+                    for (int i = 0; i < lvThongTinSV.SelectedItems.Count; i++)
+                    {
+                        ListViewItem item = lvThongTinSV.SelectedItems[i];
+                        Handling_Delete(int.Parse(item.SubItems[0].Text));
+                    }
+                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    btnXoa.Enabled = true;
+                }
+                else return;
+            }
+            Show_Info_ListViewSV();
         }
 
         private void cbNganh_KeyPress(object sender, KeyPressEventArgs e)
@@ -237,9 +267,58 @@ namespace QuanLySinhVien
                 return;
             cbLop.SelectedIndex = -1;
             cbLop.Items.Clear();
-            cbLop.Text = "--Mời chọn lớp--";
+            cbLop.Text = "------Mời chọn lớp------";
             string nganh = this.cbNganh.GetItemText(this.cbNganh.SelectedItem);
             Show_ComboboxLopHoc(nganh);
+        }
+
+        private void btnXoaThongtin_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void lvThongTinSV_DoubleClick(object sender, EventArgs e)
+        {
+            btnLuu.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = true;
+
+            var index = lvThongTinSV.FocusedItem.Index;
+            var sv = lvThongTinSV.Items[index];
+
+            txtMSSV.Text = sv.SubItems[0].Text;
+            txtTenSinhVien.Text = sv.SubItems[1].Text;
+            if (sv.SubItems[2].Text == "Nam")
+                radNam.Checked = true;
+            else radNu.Checked = true;
+
+            var date = sv.SubItems[3].Text.Split('/');
+            txtNgay.Text = date[0];
+            txtThang.Text = date[1];
+            txtNam.Text = date[2];
+
+            txtDiemToan.Text = sv.SubItems[4].Text;
+            txtDiemLy.Text = sv.SubItems[5].Text;
+            txtDiemHoa.Text = sv.SubItems[6].Text;
+
+            cbNganh.Text = sv.SubItems[9].Text;
+            cbLop.Text = sv.SubItems[8].Text;
+
+            // MSSV không đc sửa
+            txtMSSV.Enabled = false;
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            // XÓa rồi mới sửa == > thêm vào lại
+            Handling_Delete(int.Parse(txtMSSV.Text));
+            if ( Check_Luu() )
+            {
+                MessageBox.Show("Sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Show_Info_ListViewSV();
+                Clear();               
+            }
         }
     }
 }
