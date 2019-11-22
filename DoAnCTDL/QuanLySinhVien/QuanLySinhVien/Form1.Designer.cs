@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSearchSV = new System.Windows.Forms.Button();
-            this.btnQLN = new System.Windows.Forms.Button();
-            this.btnQLLH = new System.Windows.Forms.Button();
-            this.btnQLSV = new System.Windows.Forms.Button();
-            this.btnExcel = new System.Windows.Forms.Button();
             this.btnManHinhChinh = new System.Windows.Forms.Button();
+            this.btnQLSV = new System.Windows.Forms.Button();
+            this.btnQLLH = new System.Windows.Forms.Button();
+            this.btnQLN = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.btnSearchSV = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pnTop = new System.Windows.Forms.Panel();
-            this.lbTitle = new System.Windows.Forms.Label();
             this.pnShow = new System.Windows.Forms.Panel();
+            this.manHinhChinhControl1 = new QuanLySinhVien.ManHinhChinhControl();
             this.timKiemSinhVienControl1 = new QuanLySinhVien.TimKiemSinhVienControl();
             this.quanLyNganhControl1 = new QuanLySinhVien.QuanLyNganhControl();
             this.quanLyLopHocControl1 = new QuanLySinhVien.QuanLyLopHocControl();
             this.quanLySinhVienControl1 = new QuanLySinhVien.QuanLySinhVienControl();
-            this.manHinhChinhControl1 = new QuanLySinhVien.ManHinhChinhControl();
+            this.pnTop = new System.Windows.Forms.Panel();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.pnTop.SuspendLayout();
             this.pnShow.SuspendLayout();
+            this.pnTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,50 +66,20 @@
             this.panel1.Size = new System.Drawing.Size(221, 525);
             this.panel1.TabIndex = 0;
             // 
-            // btnSearchSV
+            // btnManHinhChinh
             // 
-            this.btnSearchSV.FlatAppearance.BorderSize = 0;
-            this.btnSearchSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchSV.Font = new System.Drawing.Font("Elephant", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchSV.ForeColor = System.Drawing.Color.White;
-            this.btnSearchSV.Location = new System.Drawing.Point(1, 384);
-            this.btnSearchSV.Name = "btnSearchSV";
-            this.btnSearchSV.Size = new System.Drawing.Size(216, 64);
-            this.btnSearchSV.TabIndex = 4;
-            this.btnSearchSV.Text = "     Tìm kiếm sinh viên";
-            this.btnSearchSV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchSV.UseVisualStyleBackColor = true;
-            this.btnSearchSV.Click += new System.EventHandler(this.btnSearchSV_Click);
-            // 
-            // btnQLN
-            // 
-            this.btnQLN.FlatAppearance.BorderSize = 0;
-            this.btnQLN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLN.Font = new System.Drawing.Font("Elephant", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLN.ForeColor = System.Drawing.Color.White;
-            this.btnQLN.Location = new System.Drawing.Point(1, 313);
-            this.btnQLN.Name = "btnQLN";
-            this.btnQLN.Size = new System.Drawing.Size(216, 64);
-            this.btnQLN.TabIndex = 3;
-            this.btnQLN.Text = "     Quản lý ngành";
-            this.btnQLN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLN.UseVisualStyleBackColor = true;
-            this.btnQLN.Click += new System.EventHandler(this.btnQLN_Click);
-            // 
-            // btnQLLH
-            // 
-            this.btnQLLH.FlatAppearance.BorderSize = 0;
-            this.btnQLLH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLLH.Font = new System.Drawing.Font("Elephant", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLLH.ForeColor = System.Drawing.Color.White;
-            this.btnQLLH.Location = new System.Drawing.Point(1, 243);
-            this.btnQLLH.Name = "btnQLLH";
-            this.btnQLLH.Size = new System.Drawing.Size(216, 64);
-            this.btnQLLH.TabIndex = 2;
-            this.btnQLLH.Text = "     Quản lý lớp học";
-            this.btnQLLH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLLH.UseVisualStyleBackColor = true;
-            this.btnQLLH.Click += new System.EventHandler(this.btnQLLH_Click);
+            this.btnManHinhChinh.FlatAppearance.BorderSize = 0;
+            this.btnManHinhChinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManHinhChinh.Font = new System.Drawing.Font("Elephant", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManHinhChinh.ForeColor = System.Drawing.Color.White;
+            this.btnManHinhChinh.Location = new System.Drawing.Point(2, 102);
+            this.btnManHinhChinh.Name = "btnManHinhChinh";
+            this.btnManHinhChinh.Size = new System.Drawing.Size(216, 64);
+            this.btnManHinhChinh.TabIndex = 0;
+            this.btnManHinhChinh.Text = "     Màn hình chính";
+            this.btnManHinhChinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManHinhChinh.UseVisualStyleBackColor = true;
+            this.btnManHinhChinh.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnQLSV
             // 
@@ -126,6 +96,36 @@
             this.btnQLSV.UseVisualStyleBackColor = true;
             this.btnQLSV.Click += new System.EventHandler(this.btnQLSV_Click);
             // 
+            // btnQLLH
+            // 
+            this.btnQLLH.FlatAppearance.BorderSize = 0;
+            this.btnQLLH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLLH.Font = new System.Drawing.Font("Elephant", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLLH.ForeColor = System.Drawing.Color.White;
+            this.btnQLLH.Location = new System.Drawing.Point(1, 243);
+            this.btnQLLH.Name = "btnQLLH";
+            this.btnQLLH.Size = new System.Drawing.Size(216, 64);
+            this.btnQLLH.TabIndex = 2;
+            this.btnQLLH.Text = "     Quản lý lớp học";
+            this.btnQLLH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLLH.UseVisualStyleBackColor = true;
+            this.btnQLLH.Click += new System.EventHandler(this.btnQLLH_Click);
+            // 
+            // btnQLN
+            // 
+            this.btnQLN.FlatAppearance.BorderSize = 0;
+            this.btnQLN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLN.Font = new System.Drawing.Font("Elephant", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLN.ForeColor = System.Drawing.Color.White;
+            this.btnQLN.Location = new System.Drawing.Point(1, 313);
+            this.btnQLN.Name = "btnQLN";
+            this.btnQLN.Size = new System.Drawing.Size(216, 64);
+            this.btnQLN.TabIndex = 3;
+            this.btnQLN.Text = "     Quản lý ngành";
+            this.btnQLN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLN.UseVisualStyleBackColor = true;
+            this.btnQLN.Click += new System.EventHandler(this.btnQLN_Click);
+            // 
             // btnExcel
             // 
             this.btnExcel.FlatAppearance.BorderSize = 0;
@@ -139,21 +139,22 @@
             this.btnExcel.Text = "     Xuất ra file Excel";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
-            // btnManHinhChinh
+            // btnSearchSV
             // 
-            this.btnManHinhChinh.FlatAppearance.BorderSize = 0;
-            this.btnManHinhChinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManHinhChinh.Font = new System.Drawing.Font("Elephant", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManHinhChinh.ForeColor = System.Drawing.Color.White;
-            this.btnManHinhChinh.Location = new System.Drawing.Point(2, 102);
-            this.btnManHinhChinh.Name = "btnManHinhChinh";
-            this.btnManHinhChinh.Size = new System.Drawing.Size(216, 64);
-            this.btnManHinhChinh.TabIndex = 0;
-            this.btnManHinhChinh.Text = "     Màn hình chính";
-            this.btnManHinhChinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManHinhChinh.UseVisualStyleBackColor = true;
-            this.btnManHinhChinh.Click += new System.EventHandler(this.button1_Click);
+            this.btnSearchSV.FlatAppearance.BorderSize = 0;
+            this.btnSearchSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchSV.Font = new System.Drawing.Font("Elephant", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchSV.ForeColor = System.Drawing.Color.White;
+            this.btnSearchSV.Location = new System.Drawing.Point(1, 384);
+            this.btnSearchSV.Name = "btnSearchSV";
+            this.btnSearchSV.Size = new System.Drawing.Size(216, 64);
+            this.btnSearchSV.TabIndex = 4;
+            this.btnSearchSV.Text = "     Tìm kiếm sinh viên";
+            this.btnSearchSV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchSV.UseVisualStyleBackColor = true;
+            this.btnSearchSV.Click += new System.EventHandler(this.btnSearchSV_Click);
             // 
             // panel5
             // 
@@ -167,27 +168,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(661, 522);
             this.panel5.TabIndex = 2;
-            // 
-            // pnTop
-            // 
-            this.pnTop.BackColor = System.Drawing.Color.Firebrick;
-            this.pnTop.Controls.Add(this.lbTitle);
-            this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTop.Location = new System.Drawing.Point(0, 0);
-            this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(661, 101);
-            this.pnTop.TabIndex = 0;
-            // 
-            // lbTitle
-            // 
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(13, 54);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(142, 20);
-            this.lbTitle.TabIndex = 0;
-            this.lbTitle.Text = "Màn hình chính";
             // 
             // pnShow
             // 
@@ -204,6 +184,14 @@
             this.pnShow.Name = "pnShow";
             this.pnShow.Size = new System.Drawing.Size(661, 421);
             this.pnShow.TabIndex = 1;
+            // 
+            // manHinhChinhControl1
+            // 
+            this.manHinhChinhControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manHinhChinhControl1.Location = new System.Drawing.Point(0, 0);
+            this.manHinhChinhControl1.Name = "manHinhChinhControl1";
+            this.manHinhChinhControl1.Size = new System.Drawing.Size(661, 421);
+            this.manHinhChinhControl1.TabIndex = 4;
             // 
             // timKiemSinhVienControl1
             // 
@@ -242,13 +230,26 @@
             this.quanLySinhVienControl1.Size = new System.Drawing.Size(661, 421);
             this.quanLySinhVienControl1.TabIndex = 0;
             // 
-            // manHinhChinhControl1
+            // pnTop
             // 
-            this.manHinhChinhControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.manHinhChinhControl1.Location = new System.Drawing.Point(0, 0);
-            this.manHinhChinhControl1.Name = "manHinhChinhControl1";
-            this.manHinhChinhControl1.Size = new System.Drawing.Size(661, 421);
-            this.manHinhChinhControl1.TabIndex = 4;
+            this.pnTop.BackColor = System.Drawing.Color.Firebrick;
+            this.pnTop.Controls.Add(this.lbTitle);
+            this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnTop.Location = new System.Drawing.Point(0, 0);
+            this.pnTop.Name = "pnTop";
+            this.pnTop.Size = new System.Drawing.Size(661, 101);
+            this.pnTop.TabIndex = 0;
+            // 
+            // lbTitle
+            // 
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.White;
+            this.lbTitle.Location = new System.Drawing.Point(13, 54);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(142, 20);
+            this.lbTitle.TabIndex = 0;
+            this.lbTitle.Text = "Màn hình chính";
             // 
             // Form1
             // 
@@ -266,9 +267,9 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.pnShow.ResumeLayout(false);
             this.pnTop.ResumeLayout(false);
             this.pnTop.PerformLayout();
-            this.pnShow.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

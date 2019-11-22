@@ -73,9 +73,11 @@ namespace QuanLySinhVien
             // 
             // grbDanhSachNganh
             // 
+            this.grbDanhSachNganh.BackColor = System.Drawing.Color.White;
             this.grbDanhSachNganh.Controls.Add(this.tvNganh);
             this.grbDanhSachNganh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grbDanhSachNganh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grbDanhSachNganh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbDanhSachNganh.Location = new System.Drawing.Point(0, 0);
             this.grbDanhSachNganh.Name = "grbDanhSachNganh";
             this.grbDanhSachNganh.Size = new System.Drawing.Size(221, 517);
@@ -85,10 +87,12 @@ namespace QuanLySinhVien
             // 
             // tvNganh
             // 
+            this.tvNganh.BackColor = System.Drawing.Color.Chartreuse;
             this.tvNganh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvNganh.Location = new System.Drawing.Point(3, 16);
+            this.tvNganh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvNganh.Location = new System.Drawing.Point(3, 18);
             this.tvNganh.Name = "tvNganh";
-            this.tvNganh.Size = new System.Drawing.Size(215, 498);
+            this.tvNganh.Size = new System.Drawing.Size(215, 496);
             this.tvNganh.TabIndex = 0;
             this.tvNganh.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvNganh_AfterSelect);
             // 
@@ -104,7 +108,7 @@ namespace QuanLySinhVien
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BackColor = System.Drawing.Color.Khaki;
             this.panel4.Controls.Add(this.cbNganh);
             this.panel4.Controls.Add(this.btnXoaThongTinLop);
             this.panel4.Controls.Add(this.btnThemLop);
@@ -114,7 +118,7 @@ namespace QuanLySinhVien
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(0, 250);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(660, 267);
@@ -127,73 +131,79 @@ namespace QuanLySinhVien
             this.cbNganh.Location = new System.Drawing.Point(110, 23);
             this.cbNganh.Name = "cbNganh";
             this.cbNganh.Size = new System.Drawing.Size(527, 27);
-            this.cbNganh.TabIndex = 5;
+            this.cbNganh.TabIndex = 0;
             this.cbNganh.SelectedIndexChanged += new System.EventHandler(this.cbNganh_SelectedIndexChanged);
+            this.cbNganh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbNganh_KeyPress);
             // 
             // btnXoaThongTinLop
             // 
-            this.btnXoaThongTinLop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnXoaThongTinLop.BackColor = System.Drawing.Color.LawnGreen;
+            this.btnXoaThongTinLop.FlatAppearance.BorderSize = 0;
+            this.btnXoaThongTinLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaThongTinLop.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaThongTinLop.Location = new System.Drawing.Point(336, 158);
             this.btnXoaThongTinLop.Name = "btnXoaThongTinLop";
             this.btnXoaThongTinLop.Size = new System.Drawing.Size(136, 55);
             this.btnXoaThongTinLop.TabIndex = 4;
             this.btnXoaThongTinLop.Text = "Xóa Thông TIn";
-            this.btnXoaThongTinLop.UseVisualStyleBackColor = true;
+            this.btnXoaThongTinLop.UseVisualStyleBackColor = false;
+            this.btnXoaThongTinLop.Click += new System.EventHandler(this.btnXoaThongTinLop_Click);
             // 
             // btnThemLop
             // 
-            this.btnThemLop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnThemLop.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnThemLop.FlatAppearance.BorderSize = 0;
+            this.btnThemLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemLop.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemLop.Location = new System.Drawing.Point(194, 158);
             this.btnThemLop.Name = "btnThemLop";
             this.btnThemLop.Size = new System.Drawing.Size(136, 55);
             this.btnThemLop.TabIndex = 3;
             this.btnThemLop.Text = "Thêm";
-            this.btnThemLop.UseVisualStyleBackColor = true;
+            this.btnThemLop.UseVisualStyleBackColor = false;
             this.btnThemLop.Click += new System.EventHandler(this.btnThemLop_Click);
             // 
             // txtTenLop
             // 
             this.txtTenLop.Location = new System.Drawing.Point(110, 109);
             this.txtTenLop.Name = "txtTenLop";
-            this.txtTenLop.Size = new System.Drawing.Size(527, 23);
-            this.txtTenLop.TabIndex = 1;
+            this.txtTenLop.Size = new System.Drawing.Size(527, 22);
+            this.txtTenLop.TabIndex = 2;
             // 
             // txtMaLop
             // 
             this.txtMaLop.Location = new System.Drawing.Point(110, 61);
             this.txtMaLop.Name = "txtMaLop";
-            this.txtMaLop.Size = new System.Drawing.Size(527, 23);
+            this.txtMaLop.Size = new System.Drawing.Size(527, 22);
             this.txtMaLop.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(23, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 16);
+            this.label3.Size = new System.Drawing.Size(52, 15);
             this.label3.TabIndex = 0;
             this.label3.Text = "Tên lớp:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(23, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 16);
+            this.label2.Size = new System.Drawing.Size(48, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã lớp:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(23, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(47, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ngành:";
             // 
@@ -208,11 +218,12 @@ namespace QuanLySinhVien
             // 
             // grbDanhSachLop
             // 
-            this.grbDanhSachLop.BackColor = System.Drawing.Color.White;
+            this.grbDanhSachLop.BackColor = System.Drawing.Color.Gray;
             this.grbDanhSachLop.Controls.Add(this.lvDanhSachLop);
             this.grbDanhSachLop.Controls.Add(this.btnXoaLop);
             this.grbDanhSachLop.Controls.Add(this.btnSuaLop);
             this.grbDanhSachLop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grbDanhSachLop.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbDanhSachLop.Location = new System.Drawing.Point(0, 0);
             this.grbDanhSachLop.Name = "grbDanhSachLop";
             this.grbDanhSachLop.Size = new System.Drawing.Size(660, 250);
@@ -222,18 +233,22 @@ namespace QuanLySinhVien
             // 
             // lvDanhSachLop
             // 
+            this.lvDanhSachLop.BackColor = System.Drawing.Color.Coral;
             this.lvDanhSachLop.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.lvDanhSachLop.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDanhSachLop.FullRowSelect = true;
+            this.lvDanhSachLop.GridLines = true;
             this.lvDanhSachLop.HideSelection = false;
             this.lvDanhSachLop.Location = new System.Drawing.Point(6, 19);
             this.lvDanhSachLop.Name = "lvDanhSachLop";
             this.lvDanhSachLop.Size = new System.Drawing.Size(631, 165);
-            this.lvDanhSachLop.TabIndex = 3;
+            this.lvDanhSachLop.TabIndex = 0;
             this.lvDanhSachLop.UseCompatibleStateImageBehavior = false;
             this.lvDanhSachLop.View = System.Windows.Forms.View.Details;
+            this.lvDanhSachLop.DoubleClick += new System.EventHandler(this.lvDanhSachLop_DoubleClick);
             // 
             // columnHeader1
             // 
@@ -243,35 +258,42 @@ namespace QuanLySinhVien
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tên Lớp";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader2.Width = 329;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Số lượng sinh viên";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader3.Width = 158;
             // 
             // btnXoaLop
             // 
-            this.btnXoaLop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnXoaLop.BackColor = System.Drawing.Color.Red;
+            this.btnXoaLop.FlatAppearance.BorderSize = 0;
+            this.btnXoaLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaLop.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaLop.Location = new System.Drawing.Point(501, 190);
             this.btnXoaLop.Name = "btnXoaLop";
             this.btnXoaLop.Size = new System.Drawing.Size(136, 55);
             this.btnXoaLop.TabIndex = 2;
             this.btnXoaLop.Text = "Xóa";
-            this.btnXoaLop.UseVisualStyleBackColor = true;
+            this.btnXoaLop.UseVisualStyleBackColor = false;
             this.btnXoaLop.Click += new System.EventHandler(this.btnXoaLop_Click);
             // 
             // btnSuaLop
             // 
-            this.btnSuaLop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSuaLop.BackColor = System.Drawing.Color.Gold;
+            this.btnSuaLop.Enabled = false;
+            this.btnSuaLop.FlatAppearance.BorderSize = 0;
+            this.btnSuaLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaLop.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaLop.Location = new System.Drawing.Point(359, 189);
             this.btnSuaLop.Name = "btnSuaLop";
             this.btnSuaLop.Size = new System.Drawing.Size(136, 55);
-            this.btnSuaLop.TabIndex = 2;
+            this.btnSuaLop.TabIndex = 1;
             this.btnSuaLop.Text = "Sửa";
-            this.btnSuaLop.UseVisualStyleBackColor = true;
+            this.btnSuaLop.UseVisualStyleBackColor = false;
             this.btnSuaLop.Click += new System.EventHandler(this.btnSuaLop_Click);
             // 
             // QuanLyLopHocControl

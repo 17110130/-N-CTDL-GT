@@ -88,5 +88,20 @@ namespace QuanLySinhVien
             count--;
         }
 
+        //public Node Find(L infor)
+        //{
+        //    Node pSearch = CreNode(infor);
+        //    LinkedListSV<L>.Node p = pHead;
+        //    while( p != null )
+        //    {
+        //        if (p == pSearch)
+        //        {
+        //            return p;
+        //        }
+        //        p = p.pNext;          
+        //    }
+        //    return null;
+        //}
+
     }
 }

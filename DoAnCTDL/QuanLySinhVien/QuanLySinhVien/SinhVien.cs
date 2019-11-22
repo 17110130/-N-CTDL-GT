@@ -11,7 +11,7 @@ namespace QuanLySinhVien
         private int id;
         private string name;
         private bool sex;
-        private DateTime doB; // ngày sinh
+        private Datetime doB; // ngày sinh
         private LopHoc classmajor; // Lớp chủ quản chính
         private double mScores; // điểm toán
         private double pScores; // điểm lý
@@ -33,7 +33,7 @@ namespace QuanLySinhVien
             set { sex = value; }
         }
 
-        public DateTime DoB
+        public Datetime DoB
         {
             get { return doB; }
             set { doB = value; }

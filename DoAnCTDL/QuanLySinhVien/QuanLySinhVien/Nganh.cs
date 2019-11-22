@@ -8,7 +8,7 @@ namespace QuanLySinhVien
 {
     public class Nganh
     {
-        private string maNghanh;
+        private string maNganh;
         private string tenNganh;
         private  LinkedListSV<LopHoc> dsLH;
 

@@ -43,7 +43,7 @@ namespace QuanLySinhVien
                 lviSV.SubItems.Add(NodeSV.data.Name);
                 string gioitinh = NodeSV.data.Sex == true ? "Nam" : "Nữ";
                 lviSV.SubItems.Add(gioitinh);
-                lviSV.SubItems.Add(NodeSV.data.DoB.ToString("dd/MM/yyyy"));
+                lviSV.SubItems.Add(NodeSV.data.DoB.ToDateString());
                 lviSV.SubItems.Add(NodeSV.data.Mscores.ToString());
                 lviSV.SubItems.Add(NodeSV.data.Pscores.ToString());
                 lviSV.SubItems.Add(NodeSV.data.Cscores.ToString());
@@ -100,6 +100,7 @@ namespace QuanLySinhVien
                     if (NodeSV.data.Id == int.Parse(txtMSSV.Text))
                     {
                         content += "Mã số sinh viên đã tồn tại!\n";
+                        txtMSSV.Text = "";
                     }
                     NodeSV = NodeSV.pNext;
                 }
@@ -126,7 +127,7 @@ namespace QuanLySinhVien
             bool sex = radNam.Checked ? true : false;
             sv.Sex = sex;
 
-            sv.DoB = new DateTime(int.Parse(txtNam.Text), int.Parse(txtThang.Text), int.Parse(txtNgay.Text));
+            sv.DoB = new Datetime(int.Parse(txtNgay.Text), int.Parse(txtThang.Text), int.Parse(txtNam.Text));
 
             sv.Mscores = double.Parse(txtDiemToan.Text);
             sv.Pscores = double.Parse(txtDiemLy.Text);
@@ -164,6 +165,7 @@ namespace QuanLySinhVien
             btnLuu.Enabled = true;
             btnSua.Enabled = false;
             btnXoa.Enabled = true;
+            txtMSSV.Enabled = true;
 
             txtMSSV.Text = "";
             txtTenSinhVien.Text = "";
@@ -242,11 +244,14 @@ namespace QuanLySinhVien
                         ListViewItem item = lvThongTinSV.SelectedItems[i];
                         Handling_Delete(int.Parse(item.SubItems[0].Text));
                     }
-                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    btnXoa.Enabled = true;
+                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);                 
                 }
-                else return;
+                else return;    
+            }
+            else
+            {
+                MessageBox.Show("Mời chọn đối tượng cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
             Show_Info_ListViewSV();
         }
@@ -311,14 +316,48 @@ namespace QuanLySinhVien
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            // XÓa rồi mới sửa == > thêm vào lại
-            Handling_Delete(int.Parse(txtMSSV.Text));
-            if ( Check_Luu() )
+            LinkedListSV<SinhVien>.Node NodeSV = CSDL_SV.pHead;
+            while( NodeSV != null )
             {
-                MessageBox.Show("Sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Show_Info_ListViewSV();
-                Clear();               
+                if ( NodeSV.data.Id == int.Parse(txtMSSV.Text) )
+                {
+                    NodeSV.data.Name = txtTenSinhVien.Text;
+                    bool sex = radNam.Checked ? true : false;
+                    NodeSV.data.Sex = sex;
+
+                    int day = int.Parse(txtNgay.Text);
+                    int month = int.Parse(txtThang.Text);
+                    int year = int.Parse(txtNam.Text);
+                    NodeSV.data.DoB = new Datetime(day, month, year);
+
+                    NodeSV.data.Mscores = double.Parse(txtDiemToan.Text);
+                    NodeSV.data.Pscores = double.Parse(txtDiemLy.Text);
+                    NodeSV.data.Cscores = double.Parse(txtDiemHoa.Text);
+
+                    LinkedListSV<Nganh>.Node NodeNganh = CSDL_N.pHead;
+                    string nganh = cbNganh.GetItemText(cbNganh.SelectedItem);
+                    while( NodeNganh != null )
+                    {
+                        if (NodeNganh.data.TenNganh == nganh)
+                            break;
+                        NodeNganh = NodeNganh.pNext;
+                    }
+                    LinkedListSV<LopHoc>.Node NodeLop = NodeNganh.data.DsLH.pHead;
+                    string lop = cbLop.GetItemText(cbLop.SelectedItem);
+                    while( NodeLop != null )
+                    {
+                        if (NodeLop.data.TenLopHoc == lop)
+                            break;
+                        NodeLop = NodeLop.pNext;
+                    }
+                    NodeSV.data.Classmajor = NodeLop.data;
+                    break;
+                }
+                NodeSV = NodeSV.pNext;
             }
+            MessageBox.Show("Sủa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Show_Info_ListViewSV();
+            Clear();
         }
     }
 }
