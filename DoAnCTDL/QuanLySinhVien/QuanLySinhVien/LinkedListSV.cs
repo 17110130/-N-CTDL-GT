@@ -58,7 +58,6 @@ namespace QuanLySinhVien
         {
             Node pDelete = pHead;
             Node pPre = null;
-
             while (pDelete != null)
             {
                 if (pDelete == pSearch)
@@ -78,30 +77,12 @@ namespace QuanLySinhVien
                 pPre.pNext = null;
                 pDelete = null;
             }
-            else
-            {
+            else {
                 pPre.pNext = pDelete.pNext;
                 pDelete.pNext = null;
                 pDelete = null;
             }
-
             count--;
         }
-
-        //public Node Find(L infor)
-        //{
-        //    Node pSearch = CreNode(infor);
-        //    LinkedListSV<L>.Node p = pHead;
-        //    while( p != null )
-        //    {
-        //        if (p == pSearch)
-        //        {
-        //            return p;
-        //        }
-        //        p = p.pNext;          
-        //    }
-        //    return null;
-        //}
-
     }
 }

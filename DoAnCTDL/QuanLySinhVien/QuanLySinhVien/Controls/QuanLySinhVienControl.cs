@@ -207,7 +207,6 @@ namespace QuanLySinhVien
                     }
                     NodeSV = NodeSV.pNext;
                 }
-
                 // XÓa Sinh viên trong lớp học
                 LinkedListSV<LopHoc>.Node NodeLop = CSDL_LH.pHead;
                 while (NodeLop != null)
