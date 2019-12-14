@@ -33,7 +33,6 @@ namespace QuanLySinhVien
             Show_Combobox();
             lvDanhSachLop.Items.Clear();
             cbNganh.Text = "------Mời chọn ngành------";
-
         }
 
         public void Show_Combobox()
